@@ -1,0 +1,2 @@
+# dicePoker
+First training project.
