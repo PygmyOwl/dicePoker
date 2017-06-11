@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HPl-5Q-ocz">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dice ListVC-->
+        <scene sceneID="shg-Ms-eSO">
+            <objects>
+                <viewController id="HPl-5Q-ocz" customClass="DiceListVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MCT-FM-4mp"/>
+                        <viewControllerLayoutGuide type="bottom" id="gLo-Mf-SaG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="top" semanticContentAttribute="forceLeftToRight" id="C1P-yu-PHW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bs-oK-pBO" userLabel="Throw dice">
+                                <rect key="frame" x="16" y="495" width="288" height="53"/>
+                                <color key="backgroundColor" red="1" green="0.88395722989054715" blue="0.249452821100281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="35"/>
+                                <state key="normal" title="Throw dice">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="0.23950464755712397" blue="0.15284972490608473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="throwDiceAction:" destination="HPl-5Q-ocz" eventType="touchUpInside" id="Rf4-2f-1SZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="CombinationName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4PW-07-Q2r" userLabel="CombinationName Label">
+                                <rect key="frame" x="33" y="451" width="254" height="24"/>
+                                <color key="backgroundColor" red="1" green="0.4008698508341586" blue="0.13382459001144564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="TopLeft" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="30" sectionHeaderHeight="20" sectionFooterHeight="14" translatesAutoresizingMaskIntoConstraints="NO" id="iKq-hz-m8f">
+                                <rect key="frame" x="5" y="25" width="310" height="406"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="left" semanticContentAttribute="forceLeftToRight" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="diceIdentifier" id="BFr-Xx-Fte">
+                                        <rect key="frame" x="0.0" y="20" width="310" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BFr-Xx-Fte" id="oip-sx-Im0">
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.97031139046016346" green="1" blue="0.16142635833702412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.40722934997766747" green="1" blue="0.99579435044880016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="HPl-5Q-ocz" id="j7M-4A-FGV"/>
+                                    <outlet property="delegate" destination="HPl-5Q-ocz" id="jza-CK-CDS"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iKq-hz-m8f" firstAttribute="top" secondItem="MCT-FM-4mp" secondAttribute="bottom" constant="5" id="AnL-fS-kFy"/>
+                            <constraint firstItem="gLo-Mf-SaG" firstAttribute="top" secondItem="8Bs-oK-pBO" secondAttribute="bottom" constant="20" id="Kit-99-5Rk"/>
+                            <constraint firstItem="8Bs-oK-pBO" firstAttribute="top" secondItem="4PW-07-Q2r" secondAttribute="bottom" constant="20" id="bq1-9H-3ht"/>
+                            <constraint firstItem="iKq-hz-m8f" firstAttribute="leading" secondItem="C1P-yu-PHW" secondAttribute="leading" constant="5" id="kOc-Hi-m6c"/>
+                            <constraint firstItem="4PW-07-Q2r" firstAttribute="leading" secondItem="C1P-yu-PHW" secondAttribute="leadingMargin" constant="17" id="oW3-nP-cvI"/>
+                            <constraint firstItem="8Bs-oK-pBO" firstAttribute="leading" secondItem="C1P-yu-PHW" secondAttribute="leadingMargin" id="soo-Ud-Lvt"/>
+                            <constraint firstItem="8Bs-oK-pBO" firstAttribute="trailing" secondItem="C1P-yu-PHW" secondAttribute="trailingMargin" id="tbo-zj-kHK"/>
+                            <constraint firstItem="4PW-07-Q2r" firstAttribute="top" secondItem="iKq-hz-m8f" secondAttribute="bottom" constant="20" id="wCI-Z3-cYz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4PW-07-Q2r" secondAttribute="trailing" constant="17" id="xXh-na-oBV"/>
+                            <constraint firstAttribute="trailing" secondItem="iKq-hz-m8f" secondAttribute="trailing" constant="5" id="yin-f6-3nu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="combinationNameLabel" destination="4PW-07-Q2r" id="1xN-3V-Tao"/>
+                        <outlet property="resultsTableView" destination="iKq-hz-m8f" id="H9G-bA-yxZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ucc-fg-KHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="435" y="186.97183098591549"/>
+        </scene>
+    </scenes>
+</document>
